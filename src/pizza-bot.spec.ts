@@ -118,6 +118,78 @@ describe('PizzaBot', () => {
           expect(pizzaBot.getPath()).toBe('SSDWWD');
         });
       });
+      
+      describe('diagonal movements', () => {
+        test('move north-east, move north-west', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 2, y: 2 }, {x: 0, y: 4}]);
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('EENNDWWNND');
+        });
+
+        test('move north-east, move south-east', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 2, y: 2 }, {x: 4, y: 0}]);
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('EENNDEESSD');
+        });
+
+        test('move north-west, move north-east', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 0, y: 2 }, {x: 2, y: 4}]);
+          pizzaBot.setCurrentPosition({x: 2, y: 0});
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('WWNNDEENND');
+        });
+
+        test('move north-west, move south-west', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 2, y: 2 }, {x: 0, y: 0}]);
+          pizzaBot.setCurrentPosition({x: 4, y: 0});
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('WWNNDWWSSD');
+        });
+
+        test('move south-west, move north-west', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 2, y: 0 }, {x: 0, y: 2}]);
+          pizzaBot.setCurrentPosition({x: 4, y: 2});
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('WWSSDWWNND');
+        });
+
+        test('move south-west, move south-east', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 0, y: 2 }, {x: 2, y: 0}]);
+          pizzaBot.setCurrentPosition({x: 2, y: 4});
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('WWSSDEESSD');
+        });
+
+        test('move south-east, move north-east', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 2, y: 0 }, {x: 4, y: 2}]);
+          pizzaBot.setCurrentPosition({x: 0, y: 2});
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('EESSDEENND');
+        });
+
+        test('move south-east, move south-west', () => {
+          const pizzaBot = new PizzaBot(3, 4, [{ x: 2, y: 2 }, {x: 0, y: 0}]);
+          pizzaBot.setCurrentPosition({x: 0, y: 4});
+      
+          pizzaBot.deliverPizza();
+    
+          expect(pizzaBot.getPath()).toBe('EESSDWWSSD');
+        });
+      });
     });
   });
 });
