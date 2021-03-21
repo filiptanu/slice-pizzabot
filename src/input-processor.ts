@@ -1,7 +1,7 @@
 import { Point } from './point';
 
 /**
- * A service that validates and processes the input parameters that should be passed to PizzaBot.
+ * A service that validates and processes the input parameters that should be passed to the PizzaBot service.
  */
 export class InputProcessor {
 

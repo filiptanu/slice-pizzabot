@@ -5,8 +5,7 @@ try {
     const inputProcessor = new InputProcessor();
     const { gridSize, points } = inputProcessor.processInput(process.argv[2]);
     const pizzaBot = new PizzaBot(gridSize.x, gridSize.y, points);
-    pizzaBot.deliverPizza();
-    console.log(pizzaBot.getPath());
+    console.log(pizzaBot.deliverPizza());
 } catch (error) {
     console.log(error.message);
 }
