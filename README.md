@@ -4,8 +4,8 @@ This is a Node.js/TypeScript implementation of PizzaBot, following the guideline
 
 There are two services in which the business logic resides:
 
-- `InputProcessor` - responsible for validating and parsing the input
-- `PizzaBot` - responsible for delivering pizzas to the provided points in the grid
+- `src/input-processor.ts` - responsible for validating and parsing the input.
+- `src/pizza-bot.ts` - responsible for delivering pizzas to the provided points in the grid.
 
 ## Prerequisites
 
