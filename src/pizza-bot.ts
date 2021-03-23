@@ -10,7 +10,7 @@ export class PizzaBot {
   private nextTarget: Point | null;
   private path: string;
 
-  constructor(private x: number, private y: number, private pizzas: Point[]) {
+  constructor(private houses: Point[]) {
     this.currentPosition = { x: 0, y: 0 };
     this.nextTarget = null;
     this.path = '';
@@ -19,7 +19,7 @@ export class PizzaBot {
   }
 
   /**
-   * Delivers pizzas to the points contained in the `pizzas` array.
+   * Delivers pizzas to the points contained in the `houses` array.
    * While delivering pizzas, it populates the `path` string with the directions taken at each particular step.
    * Returns the `path` string as a result.
    */
@@ -76,7 +76,7 @@ export class PizzaBot {
   }
 
   private setNextTarget() {
-    const nextTarget = this.pizzas.shift();
+    const nextTarget = this.houses.shift();
     this.nextTarget = nextTarget ? nextTarget : null;
   }
 
