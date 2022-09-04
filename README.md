@@ -1,6 +1,6 @@
 # PizzaBot
 
-This is a Node.js/TypeScript implementation of PizzaBot, following the guidelines from the PizzaBot pdf.
+This is a Node.js/TypeScript implementation of PizzaBot, following the guidelines from the [PizzaBot pdf](Tech_Test_Update.pdf).
 
 There are two services in which the business logic resides:
 
